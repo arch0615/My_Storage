@@ -1,0 +1,186 @@
+.clients-table-container {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+}
+
+.clients-table thead {
+  background: var(--bg-hover);
+}
+
+.clients-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.clients-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.clients-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.clients-table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.clients-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.client-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.client-name-text {
+  font-weight: 500;
+}
+
+.client-avatar-sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-alpha);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.client-avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Account state badges */
+.account-state-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+
+.state-active {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.state-suspended {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.state-verify {
+  background: rgba(234, 179, 8, 0.12);
+  color: #ca8a04;
+}
+
+.state-jss {
+  background: var(--primary-alpha);
+  color: var(--primary);
+}
+
+.state-rising-talent {
+  background: var(--secondary-alpha);
+  color: var(--secondary);
+}
+
+.state-top-rated {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.state-top-rated-plus {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}
+
+/* Action buttons */
+.clients-table .table-actions {
+  white-space: nowrap;
+}
+
+.clients-table .btn-action {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-table .btn-action:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-color);
+}
+
+.clients-table .btn-action-view:hover {
+  color: var(--primary);
+}
+
+.clients-table .btn-action-edit:hover {
+  color: var(--secondary);
+}
+
+.clients-table .btn-action-delete:hover {
+  color: #ef4444;
+}
+
+.clients-table-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .clients-table-container {
+    font-size: 0.85rem;
+  }
+
+  .clients-table th,
+  .clients-table td {
+    padding: 0.6rem 0.5rem;
+  }
+
+  .client-avatar-sm {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
