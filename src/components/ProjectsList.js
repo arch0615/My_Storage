@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { projectsAPI, typesAPI, divisionsAPI } from '../services/api';
 import { useToast } from '../contexts/ToastContext';
-import ProjectCard from './ProjectCard';
 import ProjectsTable from './ProjectsTable';
 import ProjectModal from './ProjectModal';
 import ProjectViewModal from './ProjectViewModal';
@@ -26,7 +25,6 @@ const ProjectsList = () => {
   const [activeSearchQuery, setActiveSearchQuery] = useState('');
   const [activeFilterType, setActiveFilterType] = useState('');
   const [activeFilterDivision, setActiveFilterDivision] = useState('');
-  const [viewMode, setViewMode] = useState('list');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -217,33 +215,6 @@ const ProjectsList = () => {
               Clear
             </button>
           )}
-          <div className="view-toggle" role="group" aria-label="View mode">
-            <button
-              className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-              onClick={() => setViewMode('list')}
-              title="Card view"
-              aria-pressed={viewMode === 'list'}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="7" height="7" rx="1" />
-                <rect x="14" y="3" width="7" height="7" rx="1" />
-                <rect x="3" y="14" width="7" height="7" rx="1" />
-                <rect x="14" y="14" width="7" height="7" rx="1" />
-              </svg>
-            </button>
-            <button
-              className={`view-btn ${viewMode === 'table' ? 'active' : ''}`}
-              onClick={() => setViewMode('table')}
-              title="Table view"
-              aria-pressed={viewMode === 'table'}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
-          </div>
         </div>
       </section>
 
@@ -268,26 +239,12 @@ const ProjectsList = () => {
         </div>
       ) : (
         <>
-          {viewMode === 'list' ? (
-            <div className="projects-grid">
-              {paginatedProjects.map(project => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onView={handleView}
-                  onEdit={handleEdit}
-                  onDelete={handleDeleteClick}
-                />
-              ))}
-            </div>
-          ) : (
-            <ProjectsTable
+          <ProjectsTable
               projects={paginatedProjects}
               onView={handleView}
               onEdit={handleEdit}
               onDelete={handleDeleteClick}
             />
-          )}
 
           {totalPages > 1 && (
             <div className="pagination">
