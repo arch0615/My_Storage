@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { projectsAPI } from '../services/api';
 import { useToast } from '../contexts/ToastContext';
-import CategoryTreeSelect from './CategoryTreeSelect';
+import CategoryTreeInline from './CategoryTreeInline';
 import './Modal.css';
 
 const ProjectModal = ({ project, types, divisions, onClose, onSave }) => {
@@ -112,88 +112,94 @@ const ProjectModal = ({ project, types, divisions, onClose, onSave }) => {
         </div>
         
         <form onSubmit={handleSubmit} className="modal-form">
-          <div className="form-group">
-            <label>Category *</label>
-            <CategoryTreeSelect
-              typeId={formData.typeId}
-              divisionId={formData.divisionId}
-              types={types}
-              divisions={divisions}
-              onChange={({ typeId, divisionId }) =>
-                setFormData(prev => ({ ...prev, typeId, divisionId }))
-              }
-            />
-          </div>
-
-          <div className="form-group">
-            <div className="form-group-header">
-              <label>URLs</label>
-              <button
-                type="button"
-                className="btn-add-url"
-                onClick={handleAddUrl}
-                title="Add another URL"
-              >
-                + Add URL
-              </button>
-            </div>
-            {formData.urls.map((url, index) => (
-              <div key={index} className="url-input-group">
-                <input
-                  type="text"
-                  value={url}
-                  onChange={(e) => handleUrlChange(index, e.target.value)}
-                  placeholder="https://example.com"
-                  className="url-input"
+          <div className="modal-form-cols">
+            <div className="modal-form-aside">
+              <div className="form-group">
+                <label>Category *</label>
+                <CategoryTreeInline
+                  typeId={formData.typeId}
+                  divisionId={formData.divisionId}
+                  types={types}
+                  divisions={divisions}
+                  onChange={({ typeId, divisionId }) =>
+                    setFormData(prev => ({ ...prev, typeId, divisionId }))
+                  }
                 />
-                {formData.urls.length > 1 && (
+              </div>
+            </div>
+
+            <div className="modal-form-main">
+              <div className="form-group">
+                <div className="form-group-header">
+                  <label>URLs</label>
                   <button
                     type="button"
-                    className="btn-remove-url"
-                    onClick={() => handleRemoveUrl(index)}
-                    title="Remove URL"
+                    className="btn-add-url"
+                    onClick={handleAddUrl}
+                    title="Add another URL"
                   >
-                    ×
+                    + Add URL
                   </button>
-                )}
+                </div>
+                {formData.urls.map((url, index) => (
+                  <div key={index} className="url-input-group">
+                    <input
+                      type="text"
+                      value={url}
+                      onChange={(e) => handleUrlChange(index, e.target.value)}
+                      placeholder="https://example.com"
+                      className="url-input"
+                    />
+                    {formData.urls.length > 1 && (
+                      <button
+                        type="button"
+                        className="btn-remove-url"
+                        onClick={() => handleRemoveUrl(index)}
+                        title="Remove URL"
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <div className="form-group">
-            <label htmlFor="shortDescription">Short Description</label>
-            <input
-              type="text"
-              id="shortDescription"
-              name="shortDescription"
-              value={formData.shortDescription}
-              onChange={handleChange}
-              placeholder="Brief project title"
-            />
-          </div>
+              <div className="form-group">
+                <label htmlFor="shortDescription">Short Description</label>
+                <input
+                  type="text"
+                  id="shortDescription"
+                  name="shortDescription"
+                  value={formData.shortDescription}
+                  onChange={handleChange}
+                  placeholder="Brief project title"
+                />
+              </div>
 
-          <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              rows="4"
-              placeholder="Detailed project description"
-            />
-          </div>
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  rows="4"
+                  placeholder="Detailed project description"
+                />
+              </div>
 
-          <div className="form-group">
-            <label htmlFor="feature">Features</label>
-            <textarea
-              id="feature"
-              name="feature"
-              value={formData.feature}
-              onChange={handleChange}
-              rows="4"
-              placeholder="List of project features"
-            />
+              <div className="form-group">
+                <label htmlFor="feature">Features</label>
+                <textarea
+                  id="feature"
+                  name="feature"
+                  value={formData.feature}
+                  onChange={handleChange}
+                  rows="4"
+                  placeholder="List of project features"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="modal-actions">

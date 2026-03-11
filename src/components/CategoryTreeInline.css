@@ -1,0 +1,58 @@
+.cti-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.5rem 0.4rem;
+  overflow-y: auto;
+  max-height: 420px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.cti-wrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cti-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cti-wrap::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+.cti-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Search box blends into the grey background */
+.cti-wrap .cat-sidebar-search-wrap {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.cti-wrap .cat-sidebar-search-wrap:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-alpha);
+}
+
+/* Restore left padding so the icon doesn't overlap the text */
+.cti-wrap .cat-sidebar-search {
+  padding: 0.3rem 0.4rem 0.3rem 1.6rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Text truncation inside flex division button */
+.cti-div-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
