@@ -5,8 +5,7 @@ import { ToastProvider } from './contexts/ToastContext';
 import AuthPage from './components/AuthPage';
 import Header from './components/Header';
 import ProjectsList from './components/ProjectsList';
-import TypesList from './components/TypesList';
-import DivisionsList from './components/DivisionsList';
+import CategoryPage from './components/CategoryPage';
 import ClientsList from './components/ClientsList';
 import './App.css';
 
@@ -33,10 +32,8 @@ function AppContent() {
     switch (activeTab) {
       case 'projects':
         return <ProjectsList />;
-      case 'types':
-        return <TypesList />;
-      case 'divisions':
-        return <DivisionsList />;
+      case 'categories':
+        return <CategoryPage />;
       case 'clients':
         return <ClientsList />;
       default:

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { projectsAPI } from '../services/api';
 import { useToast } from '../contexts/ToastContext';
-import SearchableSelect from './SearchableSelect';
+import CategoryTreeSelect from './CategoryTreeSelect';
 import './Modal.css';
 
 const ProjectModal = ({ project, types, divisions, onClose, onSave }) => {
@@ -113,28 +113,15 @@ const ProjectModal = ({ project, types, divisions, onClose, onSave }) => {
         
         <form onSubmit={handleSubmit} className="modal-form">
           <div className="form-group">
-            <label htmlFor="typeId">Type *</label>
-            <SearchableSelect
-              id="typeId"
-              name="typeId"
-              value={formData.typeId}
-              onChange={(val) => setFormData(prev => ({ ...prev, typeId: val }))}
-              options={types}
-              placeholder="Select a type"
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="divisionId">Division *</label>
-            <SearchableSelect
-              id="divisionId"
-              name="divisionId"
-              value={formData.divisionId}
-              onChange={(val) => setFormData(prev => ({ ...prev, divisionId: val }))}
-              options={divisions}
-              placeholder="Select a division"
-              required
+            <label>Category *</label>
+            <CategoryTreeSelect
+              typeId={formData.typeId}
+              divisionId={formData.divisionId}
+              types={types}
+              divisions={divisions}
+              onChange={({ typeId, divisionId }) =>
+                setFormData(prev => ({ ...prev, typeId, divisionId }))
+              }
             />
           </div>
 

@@ -41,8 +41,6 @@ const ProjectsTable = ({ projects, onView, onEdit, onDelete }) => {
       <table className="projects-table">
         <thead>
           <tr>
-            <th>Type</th>
-            <th>Division</th>
             <th>Short Description</th>
             <th>Description</th>
             <th>Features</th>
@@ -53,12 +51,6 @@ const ProjectsTable = ({ projects, onView, onEdit, onDelete }) => {
         <tbody>
           {projects.map(project => (
             <tr key={project.id}>
-              <td>
-                <span className="badge badge-type">{project.type?.name}</span>
-              </td>
-              <td>
-                <span className="badge badge-division">{project.division?.name}</span>
-              </td>
               <td className="table-short-desc">{project.shortDescription || '-'}</td>
               <td className="table-description">
                 {project.description ? (

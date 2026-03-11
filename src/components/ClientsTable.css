@@ -1,7 +1,7 @@
 .clients-table-container {
   overflow-x: auto;
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 5px;
   background: var(--bg-secondary);
 }
 
@@ -83,7 +83,7 @@
 .account-state-badge {
   display: inline-block;
   padding: 0.2rem 0.55rem;
-  border-radius: 6px;
+  border-radius: 5px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -137,9 +137,8 @@
   border: 1px solid transparent;
   cursor: pointer;
   padding: 0.35rem;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: all 0.15s ease;
-  color: var(--text-secondary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -150,16 +149,28 @@
   border-color: var(--border-color);
 }
 
-.clients-table .btn-action-view:hover {
+.clients-table .btn-action-view {
   color: var(--primary);
 }
 
+.clients-table .btn-action-view:hover {
+  color: var(--primary-hover);
+}
+
+.clients-table .btn-action-edit {
+  color: #f59e0b;
+}
+
 .clients-table .btn-action-edit:hover {
-  color: var(--secondary);
+  color: #d97706;
+}
+
+.clients-table .btn-action-delete {
+  color: #ef4444;
 }
 
 .clients-table .btn-action-delete:hover {
-  color: #ef4444;
+  color: #dc2626;
 }
 
 .clients-table-empty {

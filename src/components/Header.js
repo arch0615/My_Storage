@@ -13,8 +13,7 @@ const Header = ({ activeTab, onTabChange }) => {
 
   const tabs = [
     { id: 'projects', label: 'Projects' },
-    { id: 'types', label: 'Types' },
-    { id: 'divisions', label: 'Divisions' },
+    { id: 'categories', label: 'Categories' },
     { id: 'clients', label: 'Upwork Accounts' },
   ];
 

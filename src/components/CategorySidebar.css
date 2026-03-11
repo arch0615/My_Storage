@@ -1,0 +1,310 @@
+.cat-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 1.5rem;
+  height: calc(100vh - 3rem);
+  overflow-y: auto;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.75rem 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.cat-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cat-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cat-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+.cat-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.cat-sidebar-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+  padding: 0.2rem 0.6rem 0.5rem;
+}
+
+.cat-sidebar-all {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease, color 0.12s ease;
+  margin-bottom: 0.25rem;
+}
+
+.cat-sidebar-all:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cat-sidebar-all.selected {
+  background: var(--primary-alpha);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cat-sidebar-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-sidebar-type-row {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.cat-sidebar-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 24px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.12s ease, color 0.12s ease;
+  padding: 0;
+}
+
+.cat-sidebar-expand:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cat-sidebar-type {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.35rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.cat-sidebar-type:hover {
+  background: var(--bg-hover);
+}
+
+.cat-sidebar-type.selected {
+  background: var(--primary-alpha);
+  color: var(--primary);
+}
+
+.cat-sidebar-folder {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.cat-sidebar-type.selected .cat-sidebar-folder {
+  color: var(--primary);
+}
+
+.cat-sidebar-divisions {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.35rem;
+  padding-bottom: 0.2rem;
+}
+
+/* Per-type search */
+.cat-sidebar-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0.2rem 0 0.25rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cat-sidebar-search-wrap:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-alpha);
+}
+
+.cat-sidebar-search-icon {
+  position: absolute;
+  left: 0.45rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.cat-sidebar-search {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.4rem 0.3rem 1.6rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.775rem;
+  font-family: inherit;
+}
+
+.cat-sidebar-search:focus {
+  outline: none;
+}
+
+.cat-sidebar-search::placeholder {
+  color: var(--text-secondary);
+}
+
+.cat-sidebar-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 0.2rem;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.cat-sidebar-search-clear:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cat-sidebar-division {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.cat-sidebar-division:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cat-sidebar-division.selected {
+  background: var(--primary-alpha);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.cat-sidebar-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-color);
+  flex-shrink: 0;
+}
+
+.cat-sidebar-division.selected .cat-sidebar-dot {
+  background: var(--primary);
+}
+
+.cat-sidebar-empty {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  padding: 0.3rem 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .cat-sidebar {
+    width: 100%;
+    min-width: unset;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .cat-sidebar-title {
+    display: none;
+  }
+
+  .cat-sidebar-all,
+  .cat-sidebar-type,
+  .cat-sidebar-division {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .cat-sidebar-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+  }
+
+  .cat-sidebar-type-row {
+    width: auto;
+  }
+
+  .cat-sidebar-divisions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+
+  .cat-sidebar-expand {
+    display: none;
+  }
+}

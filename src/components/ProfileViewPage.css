@@ -30,7 +30,7 @@
 .profile-view-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 5px;
   padding: 2rem;
   box-shadow: var(--shadow-sm);
 }
@@ -148,7 +148,7 @@
 .profile-list-item {
   padding: 1rem;
   background: var(--bg-primary);
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid var(--border-color);
 }
 
@@ -175,7 +175,7 @@
 .portfolio-item {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -191,7 +191,7 @@
   height: 120px;
   width: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .portfolio-item h4 {
@@ -220,7 +220,7 @@
   color: var(--primary);
   font-size: 0.75rem;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .profile-empty {

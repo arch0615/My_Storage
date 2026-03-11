@@ -1,7 +1,7 @@
 .projects-table-container {
   overflow-x: auto;
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 5px;
   background: var(--bg-secondary);
 }
 
@@ -37,6 +37,14 @@
 
 .projects-table tbody tr {
   transition: background 0.15s ease;
+}
+
+.projects-table tbody tr:nth-child(odd) {
+  background: var(--bg-primary);
+}
+
+.projects-table tbody tr:nth-child(even) {
+  background: var(--bg-secondary);
 }
 
 .projects-table tbody tr:hover {
@@ -109,6 +117,72 @@
 .table-actions {
   display: flex;
   gap: 0.25rem;
+}
+
+/* Action icon buttons */
+.btn-action {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 5px;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-color);
+}
+
+.btn-action-view {
+  color: #3b82f6;
+}
+
+.btn-action-view:hover {
+  color: #2563eb;
+}
+
+.btn-action-edit {
+  color: #f59e0b;
+}
+
+.btn-action-edit:hover {
+  color: #d97706;
+}
+
+.btn-action-delete {
+  color: #ef4444;
+}
+
+.btn-action-delete:hover {
+  color: #dc2626;
+}
+
+/* Copy buttons in table cells */
+.btn-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-copy:hover {
+  background: var(--bg-hover);
+  color: #3b82f6;
+}
+
+.btn-copy.copied {
+  color: #22c55e;
 }
 
 @media (max-width: 768px) {

@@ -36,7 +36,7 @@
 .btn {
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -78,7 +78,7 @@
 .btn-copy {
   padding: 0.35rem;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: 5px;
   background: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 1rem;
