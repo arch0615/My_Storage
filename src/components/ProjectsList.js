@@ -179,6 +179,7 @@ const ProjectsList = () => {
             emptyLabel="All Types"
             className="filter-select"
           />
+          <div className="toolbar-divider" aria-hidden="true" />
           <SearchableSelect
             value={filterDivision}
             onChange={setFilterDivision}
@@ -188,6 +189,7 @@ const ProjectsList = () => {
             emptyLabel="All Divisions"
             className="filter-select"
           />
+          <div className="toolbar-divider" aria-hidden="true" />
           <div className="search-row">
             <svg className="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
